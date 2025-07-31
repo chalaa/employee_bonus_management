@@ -41,13 +41,21 @@ This Odoo module enables organizations to manage employee bonuses with a transpa
 
 ## File Structure
 
-- [`models/employee_bonus.py`](models/employee_bonus.py): Bonus models and business logic.
-- [`views/employee_bonus_views.xml`](views/employee_bonus_views.xml): UI views for bonuses.
-- [`wizards/bonus_rejection_wizard.py`](wizards/bonus_rejection_wizard.py): Wizard for rejection reason.
-- [`wizards/bonus_rejection_wizard_view.xml`](wizards/bonus_rejection_wizard_view.xml): Wizard view.
-- [`security/ir.model.access.csv`](security/ir.model.access.csv): Access rights.
-- [`security/bonus_record_rule.xml`](security/bonus_record_rule.xml): Record rules.
-- [`static/module requirement/4_5792034776164603656.docx`](static/module%20requirement/4_5792034776164603656.docx): Detailed module requirements.
+employee_bonus_management/
+├── models/
+│   └── employee_bonus.py
+├── views/
+│   └── employee_bonus_views.xml
+├── wizards/
+│   ├── bonus_rejection_wizard.py
+│   └── bonus_rejection_wizard_view.xml
+├── security/
+│   ├── ir.model.access.csv
+│   └── bonus_record_rule.xml
+├── static/
+│   └── module requirement/
+│       └── 4_5792034776164603656.docx
+└── README.md
 
 ## Author
 
