@@ -40,25 +40,25 @@ This Odoo module enables organizations to manage employee bonuses with a transpa
 - No additional configuration is required.
 
 ## File Structure
-employee_bonus_management
-  models
-  views
-  __init__.py
-employee_bonus_management
-├── models
-│   └── employee_bonus.py
-├── views
-│   └── employee_bonus_views.xml
-├── wizards/
+employee_bonus_management   
+  models   
+  views   
+  __init__.py   
+employee_bonus_management   
+├── models   
+│   └── employee_bonus.py   
+├── views   
+│   └── employee_bonus_views.xml   
+├── wizards/   
 │   ├── bonus_rejection_wizard.py
 │   └── bonus_rejection_wizard_view.xml
-├── security/
-│   ├── ir.model.access.csv
-│   └── bonus_record_rule.xml
-├── static/
-│   └── module requirement/
-│       └── 4_5792034776164603656.docx
-└── README.md
+├── security/   
+│   ├── ir.model.access.csv   
+│   └── bonus_record_rule.xml   
+├── static/   
+│   └── module requirement/    
+│       └── 4_5792034776164603656.docx   
+└── README.md   
 
 ## Author
 
