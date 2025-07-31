@@ -9,8 +9,6 @@
             <field name="domain_force">['|',('employee_id.user_id', '=', user.id),('employee_id.parent_id.user_id', '=', user.id),('state', '!=', 'draft')]</field>
         </record>
 
-        <!-- Rule for the manager to se his bonuses and his employee  -->
-
         <!-- Rule for HR Manager - see all -->
         <record id="rule_bonus_hr_manager_all" model="ir.rule">
             <field name="name">HR Manager: See All Bonuses</field>
