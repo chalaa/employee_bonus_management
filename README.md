@@ -41,10 +41,10 @@ This Odoo module enables organizations to manage employee bonuses with a transpa
 
 ## File Structure
 
-employee_bonus_management/
-├── models/
+employee_bonus_management
+├── models
 │   └── employee_bonus.py
-├── views/
+├── views
 │   └── employee_bonus_views.xml
 ├── wizards/
 │   ├── bonus_rejection_wizard.py
