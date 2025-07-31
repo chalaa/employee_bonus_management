@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_bonus_hr_manager,employee_bonus_hr_manager,model_hr_employee_bonus,hr.group_hr_manager,1,1,1,1
+access_employee_bonus_manager,employee_bonus_manager,model_hr_employee_bonus,hr.group_hr_user,1,1,0,0
+access_employee_bonus_rejection_reason,employee_bonus_rejection_reason,model_reject_bonus_wizard,hr.group_hr_user,1,1,1,1

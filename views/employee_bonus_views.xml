@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- inherited employee form view  -->
+    <record id="view_employee_form_inherit_bonus" model="ir.ui.view">
+        <field name="name">hr.employee.form.bonus.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group/field[@name='category_ids']" position="after">
+                <field name="total_bonus_amount" readonly="1"/>
+            </xpath>
+            
+            <notebook position="inside">
+                <page string="Bonuses" groups="hr.group_hr_user">
+                    <field name="employee_bonus_ids">
+                        <list>
+                            <field name="bonus_type" width="25"/>
+                            <field name="amount" width="25"/>
+                            <field name="date_awarded" width="25"/>
+                            <field name="state" width="25"/>
+                        </list>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+    <!-- list view  -->
+    <record id="hr_employee_bonus_view_list" model="ir.ui.view">
+        <field name="name">hr.employee.bonus.view.list</field>
+        <field name="model">hr.employee.bonus</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="employee_id" />
+                <field name="employee_id"/>
+                <field name="bonus_type"/>
+                <field name="amount"/>
+                <field name="date_awarded"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- form view  -->
+
+    <record id="hr_employee_bonus_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.bonus.view.form</field>
+        <field name="model">hr.employee.bonus</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" type="object" string="Submit" class="btn-primary" invisible="state != 'draft'" groups="hr.group_hr_manager"/>
+                    <button name="action_approve" type="object" string="Approve" class="btn-primary" invisible="not is_manager or state != 'submitted'"/>
+                    <button name="action_reject" type="object" string="Reject" class="btn-danger" invisible="not is_manager or state != 'submitted'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submitted,approved,rejected"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="is_manager" invisible="1"/>
+                        <field name="employee_id" readonly="state != 'draft'"/>
+                        <field name="bonus_type" readonly="state != 'draft'"/>
+                        <field name="amount" readonly="state != 'draft'"/>
+                        <field name="date_awarded" readonly="state != 'draft'"/>
+                        <field name="manager_id" readonly="1"/>
+                        <field name="rejection_reason" invisible="state != 'rejected'"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action  -->
+    <record id="action_hr_employee_bonus" model="ir.actions.act_window">
+        <field name="name">Employee Bonuses</field>
+        <field name="res_model">hr.employee.bonus</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>Track bonuses granted to employees and manage approval workflow.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hr_employee_bonus_root" name="Employee Bonus" parent="hr.menu_hr_root"/>
+    <menuitem id="menu_hr_employee_bonus" name="Bonus" parent="menu_hr_employee_bonus_root" action="action_hr_employee_bonus" />
+</odoo>
