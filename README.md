@@ -40,7 +40,10 @@ This Odoo module enables organizations to manage employee bonuses with a transpa
 - No additional configuration is required.
 
 ## File Structure
-
+employee_bonus_management
+  models
+  views
+  __init__.py
 employee_bonus_management
 ├── models
 │   └── employee_bonus.py
