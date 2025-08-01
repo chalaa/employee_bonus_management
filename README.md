@@ -63,7 +63,3 @@ employee_bonus_management/
 ## Author
 
 Chala Olani
-
-## License
-
-See Odoo licensing terms.
